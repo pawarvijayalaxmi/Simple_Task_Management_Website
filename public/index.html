@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Global Trend - Task App</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Task Manager</h1>
+    </header>
+    <main>
+      <section class="form-section">
+        <h2 id="form-title">Add Task</h2>
+        <form id="task-form">
+          <input type="hidden" id="task-id" />
+          <label>Title
+            <input id="title" required />
+          </label>
+          <label>Description
+            <textarea id="description"></textarea>
+          </label>
+          <label>Status
+            <select id="status">
+              <option value="todo">To Do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </label>
+          <div class="form-actions">
+            <button type="submit">Save</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <h2>Tasks</h2>
+        <div id="filters">
+          <div class="filter-row">
+            <input id="search" placeholder="Search tasks by title or description..." />
+            <select id="filter-status">
+              <option value="all">All</option>
+              <option value="todo">To Do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+            <button id="new-task" class="small">New Task</button>
+          </div>
+        </div>
+        <ul id="tasks"></ul>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
